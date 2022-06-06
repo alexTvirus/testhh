@@ -10,7 +10,7 @@
           Đăng Nhập
         </div>
         <div style="padding:8px 0 12px 12px;">
-          <form method="POST" action="{{ route('login') }}">
+          <form method="POST" action="/login">
             @csrf
             <p style="padding:8px 0 0 0; font-weight:bolder;">
               Email
