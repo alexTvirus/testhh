@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use App\User;
 class LoginController extends Controller
 {
     /*
@@ -31,7 +31,8 @@ class LoginController extends Controller
     protected function redirectTo()
     {
         session()->flash("success","Đăng nhập thành công!");
-        return view('admin.list');
+        $users = User::admins()->orderBy('id', 'desc')->get();
+        return view('admin.list', compact('users'));
     }
 
 
