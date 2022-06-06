@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\User;
+use App\Http\Controllers\admin\UsersController;
+
 class LoginController extends Controller
 {
     /*
@@ -33,7 +35,7 @@ class LoginController extends Controller
         session()->flash("success","Đăng nhập thành công!");
         //$users = User::admins()->orderBy('id', 'desc')->get();
         //return view('admin.list', compact('users'));
-        return redirect()->route('user.admins.list');
+        return redirect()->action([UsersController::class, 'admins']);
     }
 
 
