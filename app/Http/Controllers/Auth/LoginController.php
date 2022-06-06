@@ -35,7 +35,7 @@ class LoginController extends Controller
         session()->flash("success","Đăng nhập thành công!");
         //$users = User::admins()->orderBy('id', 'desc')->get();
         //return view('admin.list', compact('users'));
-        return redirect()->action([UsersController::class, 'admins']);
+        return '/admin/list';
     }
 
 
