@@ -31,8 +31,9 @@ class LoginController extends Controller
     protected function redirectTo()
     {
         session()->flash("success","Đăng nhập thành công!");
-        $users = User::admins()->orderBy('id', 'desc')->get();
-        return view('admin.list', compact('users'));
+        //$users = User::admins()->orderBy('id', 'desc')->get();
+        //return view('admin.list', compact('users'));
+        return redirect()->route('user.admins.list');
     }
 
 
